@@ -1,3 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using App;
 
-Console.WriteLine("Hello, World!");
+var group = new Group("Группа ПИ-101");
+
+group.AddStudent(new Student("Иван", "Иванов"));
+group.AddStudent(new Student("Мария", "Петрова"));
+group.AddStudent(new Student("Сергей", "Смирнов"));
+group.AddStudent(new Student("Анна", "Кузнецова"));
+group.AddStudent(new Student("Дмитрий", "Соколов"));
+
+Console.WriteLine(group.ToString());

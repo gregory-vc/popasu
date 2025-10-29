@@ -1,3 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using App;
 
-Console.WriteLine("Hello, World!");
+var group = new Group("Группа КОМ-401");
+
+group.New("Иван", "Иванов");
+group.New("Мария", "Петрова");
+group.New("Сергей", "Смирнов");
+
+Console.WriteLine(group.ToString());
