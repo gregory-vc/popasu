@@ -1,6 +1,5 @@
 ﻿using App;
 
-// Часть 1: агрегация + глубокое клонирование
 var groupAgg = new Group("Группа КЛ-501");
 
 var a1 = new Student("Иван", "Иванов");
@@ -18,7 +17,6 @@ Console.WriteLine(groupAgg.ToString());
 Console.WriteLine("Клон (глубокая копия):");
 Console.WriteLine(clone.ToString());
 
-// Часть 2: композиция через New()
 var groupComp = new Group("Группа КЛ-502");
 groupComp.New("Анна", "Кузнецова");
 groupComp.New("Дмитрий", "Соколов");

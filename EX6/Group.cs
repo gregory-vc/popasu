@@ -2,7 +2,6 @@ using System.Text;
 
 namespace App;
 
-// На базе агрегации (EX4) с поддержкой глубокого клонирования
 public class Group
 {
     public string Name { get; }
@@ -15,23 +14,19 @@ public class Group
         Name = name ?? throw new ArgumentNullException(nameof(name));
     }
 
-    // Агрегация: добавление ссылки на существующего студента
     public void Add(Student student)
     {
         if (student is null) throw new ArgumentNullException(nameof(student));
         if (!_students.Contains(student))
             _students.Add(student);
     }
-
-    // Композиция: создание зависимого объекта внутри корня
-    public Student New(string firstName, string lastName)
+    
+    public void New(string firstName, string lastName)
     {
         var student = new Student(firstName, lastName);
         _students.Add(student);
-        return student;
     }
-
-    // Глубокое клонирование корня и всех его зависимых объектов
+    
     public Group DeepClone()
     {
         var clone = new Group(Name);
